@@ -6,6 +6,14 @@ const nextConfig = {
         protocol: "https",
         hostname: "rpclimo.com",
       },
+      {
+        protocol: "https",
+        hostname: "upload.wikimedia.org",
+      },
+      {
+        protocol: "https",
+        hostname: "www.washingtonpost.com",
+      },
     ],
   },
 };

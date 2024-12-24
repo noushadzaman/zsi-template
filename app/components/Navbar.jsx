@@ -1,13 +1,13 @@
-'use client';
+// 'use client';
 
-import CTA from "./CTA";
+// import CTA from "./CTA";
 
-const Navbar = () => {
-    return (
-        <nav>
-            <CTA />
-        </nav>
-    )
-}
+// const Navbar = () => {
+//     return (
+//         <nav>
+//             <CTA />
+//         </nav>
+//     )
+// }
 
-export default Navbar
+// export default Navbar
