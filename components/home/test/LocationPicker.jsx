@@ -2,7 +2,7 @@
 
 import { Map, Marker } from "pigeon-maps";
 import { useState } from "react";
-import geolib from 'geolib';
+import * as geolib from 'geolib';
 import Image from "next/image";
 import { motion } from 'framer-motion';
 
@@ -10,6 +10,8 @@ const LocationPicker = () => {
     const [pickup, setPickup] = useState([]);
     const [destination, setDestination] = useState([]);
     const [totalDistance, setTotalDistance] = useState(null);
+
+    console.log(pickup, destination);
 
 
     return (
@@ -25,18 +27,25 @@ const LocationPicker = () => {
                     defaultCenter={[50.879, 4.6997]}
                     defaultZoom={11}
                     onClick={({ latLng }) => {
+                        const [latitude, longitude] = latLng; // Extract latitude and longitude from the array
+
                         if (pickup.length === 0) {
-                            setPickup(latLng);
-                        }
-                        else {
-                            setDestination(latLng);
-                            const distance = geolib.getDistance(pickup, latLng);
+                            setPickup({ latitude, longitude });
+                        } else {
+                            const destinationObj = { latitude, longitude };
+                            setDestination(destinationObj);
+
+                            // Calculate distance
+                            const distance = geolib.getDistance(
+                                { latitude: pickup.latitude, longitude: pickup.longitude },
+                                destinationObj
+                            );
                             setTotalDistance(distance);
                         }
                     }}
                 >
-                    {pickup && <Marker width={50} anchor={pickup} />}
-                    {destination && <Marker width={50} anchor={destination} />}
+                    {pickup && <Marker width={50} anchor={[pickup.latitude, pickup.longitude]} />}
+                    {destination && <Marker width={50} anchor={[destination.latitude, destination.longitude]} />}
                 </Map>
 
                 {

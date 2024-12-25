@@ -10,7 +10,7 @@ import LocationPicker from "@/components/home/test/LocationPicker";
 
 export default function Home() {
   return (
-    <div className="relative">
+    <div className="relative overflow-hidden">
       <Banner />
       <section className="mt-[50px] mb-[50px] px-[22px] md:px-[30px] lg:px-[50px] xl:px-[70px]">
         <QuickPriceCheck />
