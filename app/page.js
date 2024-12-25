@@ -6,6 +6,7 @@ import QuickPriceCheck from "@/components/home/QuickPriceCheck";
 import Services from "@/components/home/Services";
 import Video from "@/components/home/Video";
 import FAQ from "@/components/home/FAQ/FAQ";
+import LocationPicker from "@/components/home/test/LocationPicker";
 
 export default function Home() {
   return (
@@ -31,6 +32,7 @@ export default function Home() {
       </section>
       <section className="mt-[60px] mb-[50px] px-[22px] md:px-[30px] lg:px-[50px] xl:px-[70px]">
         <FAQ />
+        <LocationPicker />
       </section>
     </div>
   );

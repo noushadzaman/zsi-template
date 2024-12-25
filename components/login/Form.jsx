@@ -12,12 +12,12 @@ const Form = () => {
     
     const onSubmit = (data) => {
         dispatch(loginUser(data)).then(res => {
-            if (res.payload.token) {
-                toast(`Logged in successfully as ${res.payload.user.name}`);
-                console.log(res.payload.user);
+            if (res?.payload?.token) {
+                toast(`Logged in successfully as ${res?.payload?.user?.name}`);
+                console.log(res?.payload?.user);
             } else {
-                toast(res.payload.message);
-                console.log(res.payload.message);
+                toast(res?.payload?.message);
+                console.log(res?.payload?.message);
             }
         })
     }
