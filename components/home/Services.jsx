@@ -29,10 +29,10 @@ const Services = () => {
             </div>
 
             <div className="flex justify-center">
-                <button className="bg-black text-white py-[7px] px-[40px] font-[600] text-[18px] leading-[40px] mt-[30px] flex justify-center items-center gap-3 cursor-pointer transition-colors duration-300 hover:bg-[#da9100]">
+                <div className="bg-black text-white py-[7px] px-[40px] font-[600] text-[18px] leading-[40px] mt-[30px] flex justify-center items-center gap-3 cursor-pointer transition-colors duration-300 hover:bg-[#da9100]">
                     View All services
                     <FaLongArrowAltRight />
-                </button>
+                </div>
             </div>
         </section>
     )

@@ -1,5 +1,5 @@
 import { fleetData } from "@/lib/constants";
-import Intro from "./Intro"
+import Intro from "../Intro"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ImageCarousel from "./ImageCarousel";
 import ItemInfo from "./ItemInfo";

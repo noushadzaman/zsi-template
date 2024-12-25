@@ -28,6 +28,7 @@ const ItemInfo = ({ item }) => {
                     }
                 </div>
             </div>
+            <button className="bg-black text-white py-[5px] px-[35px] font-[600] text-[15px] leading-[40px] hover:text-black hover:bg-white cursor-pointer transition-colors duration-300 m-[10px] mt-[35px]">Book Now Pay Later</button>
         </section>
     )
 }

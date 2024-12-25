@@ -42,13 +42,13 @@ export const PrevButton = (props) => {
     const { children, ...restProps } = props
 
     return (
-        <button
+        <div
             type="button"
             {...restProps}
         >
-            <FaLongArrowAltLeft className="text-gray-500" size={30} />
+            <FaLongArrowAltLeft size={30} />
             {children}
-        </button>
+        </div>
     )
 }
 
@@ -56,12 +56,12 @@ export const NextButton = (props) => {
     const { children, ...restProps } = props
 
     return (
-        <button
+        <div
             type="button"
             {...restProps}
         >
-            <FaLongArrowAltRight className="text-gray-500" size={30} />
+            <FaLongArrowAltRight size={30} />
             {children}
-        </button>
+        </div>
     )
 }

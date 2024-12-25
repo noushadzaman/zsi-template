@@ -27,7 +27,7 @@ const EmblaCarousel = ({ clientData, options }) => {
 
     return (
         <section className="embla pt-[50px] flex items-center justify-between">
-            <div onClick={onPrevButtonClick} className='hidden md:flex w-[62px] h-[67px] shadow-[#e9f4f5] shadow-xl mx-4 items-center justify-center shrink-0'>
+            <div onClick={onPrevButtonClick} className='hidden md:flex w-[67px] h-[67px] shadow-[#e9f4f5] shadow-xl mx-4 items-center justify-center shrink-0 hover:bg-[#da9100] cursor-pointer text-gray-500 hover:text-white transition duration-300'>
                 <PrevButton disabled={prevBtnDisabled} />
             </div>
             <div className='w-full md:max-w-[500] lg:max-w-[700px] xl:max-w-[920px] max-md:px-0'>
@@ -70,7 +70,7 @@ const EmblaCarousel = ({ clientData, options }) => {
                     ))}
                 </div>
             </div>
-            <div onClick={onNextButtonClick} className="hidden md:flex w-[62px] h-[67px] shadow-[#e9f4f5] shadow-xl mx-4 items-center justify-center shrink-0">
+            <div onClick={onNextButtonClick} className="hidden md:flex w-[67px] h-[67px] shadow-[#e9f4f5] shadow-xl mx-4 items-center justify-center shrink-0 hover:bg-[#da9100] cursor-pointer text-gray-500 hover:text-white transition duration-300">
                 <NextButton disabled={nextBtnDisabled} />
             </div>
         </section>
