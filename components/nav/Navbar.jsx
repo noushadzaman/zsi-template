@@ -11,7 +11,16 @@ import NavItems from './NavItems';
 const Navbar = () => {
     const [mobileNavOpen, setMobileNavOpen] = useState(false);
     const [navItemsNumber, setNavItemsNumber] = useState(2);
-    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const [windowWidth, setWindowWidth] = useState(null);
+
+    useEffect(() => {
+        setWindowWidth(window.innerWidth);
+
+        const handleResize = () => setWindowWidth(window.innerWidth);
+        window.addEventListener('resize', handleResize);
+
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     useEffect(() => {
         const handleResize = () => {

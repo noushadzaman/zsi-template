@@ -1,3 +1,5 @@
+"use client";
+
 import { navData } from "@/lib/constants"
 import { Fragment, useState } from "react"
 import { RiArrowDownSLine } from "react-icons/ri"

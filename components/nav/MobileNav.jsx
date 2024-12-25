@@ -1,3 +1,5 @@
+"use client";
+
 import { navData } from "@/lib/constants";
 import { RxCross2 } from "react-icons/rx";
 import { RiArrowDownSLine } from "react-icons/ri";

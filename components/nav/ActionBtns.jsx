@@ -1,3 +1,5 @@
+"use client";
+
 import { FaPhone } from "react-icons/fa";
 import { twMerge } from "tailwind-merge";
 import { IoReorderThreeOutline } from "react-icons/io5";
