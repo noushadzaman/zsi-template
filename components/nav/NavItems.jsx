@@ -5,6 +5,7 @@ import { Fragment, useState } from "react"
 import { RiArrowDownSLine } from "react-icons/ri"
 import { twMerge } from "tailwind-merge"
 import MoreButton from "./MoreButton"
+import { AnimatePresence, motion } from "framer-motion";
 
 const NavItems = ({ navItemsNumber }) => {
     const [hoveredOn, setHoveredOn] = useState('');
@@ -27,24 +28,45 @@ const NavItems = ({ navItemsNumber }) => {
                                 }
                             </div>
                             {item.childRoutes?.length > 0 && item.label === hoveredOn &&
-                                <div
-                                    className={twMerge(`opacity-0 transition-all duration-300 absolute group-hover:top-[111px] top-[130px] z-20`, `group-hover:opacity-100`)}
-                                >
-                                    {
-                                        item.childRoutes.map((item, i) => (
-                                            <Fragment key={i}>
-                                                <hr className='first:hidden border-[#e8ac35]' />
-                                                <div className='hover:text-white flex items-center gap-2 text-[15px] font-[600] cursor-pointer shrink-0 bg-[#da9100] w-[290px] p-4 transition-colors duration-300'>
-                                                    <a href={item.href}>{item.label}</a>
-                                                    {
-                                                        item.childRoutes &&
-                                                        <RiArrowDownSLine />
-                                                    }
-                                                </div>
-                                            </Fragment>
-                                        ))
-                                    }
-                                </div>
+                                <AnimatePresence>
+                                    <motion.div
+                                        initial={{
+                                            height: 0,
+                                            marginTop: 24,
+                                            opacity: 0
+                                        }}
+                                        animate={{
+                                            height: "auto",
+                                            marginTop: 0,
+                                            opacity: 100
+                                        }}
+                                        exit={{
+                                            height: 24,
+                                            marginTop: 0,
+                                            opacity: 0
+                                        }}
+                                        transition={{
+                                            ease: "linear",
+                                            duration: 0.1
+                                        }}
+                                        className={twMerge(`duration-300 absolute group-hover:top-[111px] top-[130px] z-20`, ``)}
+                                    >
+                                        {
+                                            item.childRoutes.map((item, i) => (
+                                                <Fragment key={i}>
+                                                    <hr className='first:hidden border-[#e8ac35]' />
+                                                    <div className='hover:text-white flex items-center gap-2 text-[15px] font-[600] cursor-pointer shrink-0 bg-[#da9100] w-[290px] p-4 transition-colors duration-300'>
+                                                        <a href={item.href}>{item.label}</a>
+                                                        {
+                                                            item.childRoutes &&
+                                                            <RiArrowDownSLine />
+                                                        }
+                                                    </div>
+                                                </Fragment>
+                                            ))
+                                        }
+                                    </motion.div>
+                                </AnimatePresence>
                             }
                         </div>
                     ))
